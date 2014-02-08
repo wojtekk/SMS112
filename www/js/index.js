@@ -20,7 +20,6 @@ var app = {
     // Application Constructor
     initialize: function() {
         this.bindEvents();
-        alert(1);
     },
     // Bind Event Listeners
     //
@@ -34,8 +33,6 @@ var app = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicity call 'app.receivedEvent(...);'
     onDeviceReady: function() {
-        alert(2);
-
         app.receivedEvent('deviceready');
 
         app.start();
@@ -68,7 +65,6 @@ var app = {
     },
 
     start: function() {
-        alert(3);
         document.querySelector('#start').style.display = 'block';
 
         var parts = [];
@@ -84,7 +80,5 @@ var app = {
                 document.body.scrollTop = document.documentElement.scrollTop = 0;
             }, false);
         }
-
-
     }
 };
