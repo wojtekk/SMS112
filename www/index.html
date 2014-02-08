@@ -44,7 +44,7 @@
             <div class="link icon icon-return" data-next="noofpeople" data-hide="address">cofnij</div>
             <div class="link icon" id="question-address1" data-next="send" data-hide="address" data-text="Odpowiedź 2, opcja 1. ">Dom</div>
             <div class="link icon" id="question-address2" data-next="send" data-hide="address" data-text="niepodane">...</div>
-            <div class="link icon" id="question-address-gps" data-next="send" data-hide="address" data-text="gps">Adres z gps: </div>
+            <div class="link icon" id="question-address-gps" data-next="send" data-hide="address" data-text="gps">GPS:<span></span> </div>
         </section> 
 
         <section class="question" id="settings">
@@ -71,8 +71,10 @@
             <div id="sms">
 
             </div>
-            <div class="link icon" data-next="start" data-hide="send">zakończ</div>
+            <div class="link icon" data-next="start" data-hide="send" id="finish">zakończ</div>
         </section>
+        
+        <div id="debug"></div>
         
         <script type="text/javascript" src="phonegap.js"></script>
         <script type="text/javascript" src="js/index.js"></script>

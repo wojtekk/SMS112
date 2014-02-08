@@ -38,14 +38,14 @@ var app = {
         app.start();
 
         var onSuccess = function(position) {
-            alert('Latitude: '          + position.coords.latitude          + '\n' +
-                'Longitude: '         + position.coords.longitude         + '\n' +
-                'Altitude: '          + position.coords.altitude          + '\n' +
-                'Accuracy: '          + position.coords.accuracy          + '\n' +
-                'Altitude Accuracy: ' + position.coords.altitudeAccuracy  + '\n' +
-                'Heading: '           + position.coords.heading           + '\n' +
-                'Speed: '             + position.coords.speed             + '\n' +
-                'Timestamp: '         + position.timestamp                + '\n');
+            alert('Latitude: ' + position.coords.latitude + '\n' +
+                    'Longitude: ' + position.coords.longitude + '\n' +
+                    'Altitude: ' + position.coords.altitude + '\n' +
+                    'Accuracy: ' + position.coords.accuracy + '\n' +
+                    'Altitude Accuracy: ' + position.coords.altitudeAccuracy + '\n' +
+                    'Heading: ' + position.coords.heading + '\n' +
+                    'Speed: ' + position.coords.speed + '\n' +
+                    'Timestamp: ' + position.timestamp + '\n');
         };
 
 // onError Callback receives a PositionError object
@@ -63,7 +63,7 @@ var app = {
     receivedEvent: function(id) {
 
     },
-  start: function() {
+    start: function() {
         document.querySelector('#start').style.display = 'block';
 
 //          pytania główne
@@ -75,8 +75,9 @@ var app = {
             var latitude = position.coords.latitude;
             var longitude = position.coords.longitude;
             var accuracy = position.coords.accuracy;
+
             document.querySelector('#question-address-gps').setAttribute('data-text', latitude + '|' + longitude + '|' + accuracy);
-            
+
             var geocoder = new google.maps.Geocoder();
             var lat = parseFloat(latitude);
             var lng = parseFloat(longitude);
@@ -88,18 +89,22 @@ var app = {
                         document.querySelector('#question-address-gps').setAttribute('data-text', document.querySelector('#question-address-gps').getAttribute('data-text') + '|' + results[1].formatted_address);
                     } else {
                         console.log('No results found');
+                        alert('No results found');
                         document.querySelector('#question-address-gps').innerHTML += 'nie znaleziono'
                     }
                 } else {
                     document.querySelector('#question-address-gps').innerHTML += 'błąd'
                     console.log('Geocoder failed due to: ' + status);
+                    alert('Geocoder failed due to: ' + status);
                 }
             });
 
         }, function(error) {
             console.log(error);
+            alert(error);
         });
 
+        document.querySelector('#question-address1').setAttribute('data-text', localStorage.getItem('address1'));
 
         document.querySelector('#question-address2').innerHTML = localStorage.getItem('address2-description');
         document.querySelector('#question-address2').setAttribute('data-text', localStorage.getItem('address2-value'));
@@ -131,6 +136,12 @@ var app = {
                 document.body.scrollTop = document.documentElement.scrollTop = 0;
             }, false);
         }
+
+        document.querySelector('#finish').addEventListener('click', function(event) {
+            parts = [];
+            parts[parts.length] = localStorage.getItem('name');
+            document.querySelector('#sms').innerHTML = '';
+        });
 
         document.querySelector('#save').addEventListener('click', function(event) {
             localStorage.setItem('name', document.querySelector('#name').value);
