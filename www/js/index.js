@@ -38,7 +38,7 @@ var app = {
 
         app.receivedEvent('deviceready');
 
-        this.start();
+        app.start();
 //
 //        var onSuccess = function(position) {
 //            document.getElementById("geo").innerHTML('Latitude: '          + position.coords.latitude          + '<br />' +
@@ -68,8 +68,8 @@ var app = {
     },
 
     start: function() {
-        document.querySelector('#start').style.display = 'block';
         alert(3);
+        document.querySelector('#start').style.display = 'block';
 
         var parts = [];
 
