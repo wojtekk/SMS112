@@ -35,7 +35,7 @@ var app = {
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
 
-
+        this.start();
         //
         var onSuccess = function(position) {
             document.getElementById("geo").innerHTML('Latitude: '          + position.coords.latitude          + '<br />' +
@@ -69,5 +69,25 @@ var app = {
         receivedElement.setAttribute('style', 'display:block;');
 
         console.log('Received Event: ' + id);
+    },
+
+    start: function() {
+        document.querySelector('#start').style.display = 'block';
+
+        var parts = [];
+
+        var list = document.querySelectorAll('#start .link, #fire .link, #noofpeople .link, #address .link, #send .link');
+        for (var i = 0; i < list.length; i++) {
+            list[i].addEventListener('click', function(event) {
+                document.querySelector('#' + this.getAttribute('data-hide')).style.display = 'none';
+                document.querySelector('#' + this.getAttribute('data-next')).style.display = 'block';
+                parts[parts.length] = this.innerHTML;
+//                  parts[parts.length] = this.getAttribute('data-text');
+                document.querySelector('#sms').innerHTML = parts.join(', ');
+                document.body.scrollTop = document.documentElement.scrollTop = 0;
+            }, false);
+        }
+
+
     }
 };

@@ -2,63 +2,11 @@
 <html>
     <head>
         <title>SMS-to-112</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, user-scalable=no">
-        <style>
-            body{
-                font: 2em Tahoma;
-            }
-
-            .link{
-                height: 140px;
-                border-radius: 5px;
-                background: #6FE64E;
-                border: solid 1px #999;
-                text-align: center;
-                line-height: 140px;
-                margin-bottom: 10px;
-                font-size: 3em;
-                cursor: pointer;
-            }
-
-            .icon{
-                padding-left: 140px;
-                background-position: 10px 50%;
-                background-repeat: no-repeat;
-            }
-            .icon-fire{
-                background-image: url(img/fire.png);
-            }
-            .icon-help{
-                background-image: url(img/help.png);
-            }
-            .icon-mug{
-                background-image: url(img/mug.png);
-            }
-            .icon-crash{
-                background-image: url(img/crash.png);
-            }
-            .icon-home{
-                background-image: url(img/home.png);
-            }
-            .icon-return{
-                background-image: url(img/return.png);
-                background-size: 64px 64px;
-                height: 80px;    
-                line-height: 80px;    
-                font-size: 1.5em;
-            }
-
-            .question{
-                display: none;
-            }
-
-            #sms{
-                text-align: center;
-                font-size: 0.8em;
-                margin: 30px;
-            }
-        </style>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
     </head>
     <body>
         <section class="question" id="start">
@@ -105,23 +53,15 @@
             </div>
             <div class="link icon" data-next="start" data-hide="send">zakończ</div>
         </section>
-        <script>
-            document.querySelector('#start').style.display = 'block';
-
-            var parts = [];
-
-            var list = document.querySelectorAll('#start .link, #fire .link, #noofpeople .link, #address .link, #send .link');
-            for (var i = 0; i < list.length; i++) {
-                list[i].addEventListener('click', function(event) {
-                    document.querySelector('#' + this.getAttribute('data-hide')).style.display = 'none';
-                    document.querySelector('#' + this.getAttribute('data-next')).style.display = 'block';
-                    parts[parts.length] = this.innerHTML;
-//                  parts[parts.length] = this.getAttribute('data-text');
-                    document.querySelector('#sms').innerHTML = parts.join(', ');
-                    document.body.scrollTop = document.documentElement.scrollTop = 0;
-                }, false);
+        <script type="text/javascript" src="phonegap.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript">
+            app.initialize();
+            if (navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry|IEMobile)/)) {
+                document.addEventListener("deviceready", onDeviceReady, false);
+            } else {
+                app.start(); //this is the browser
             }
-
         </script>
     </body>
 </html>
