@@ -61,7 +61,7 @@ body{
 }
 
 .question{
-    display: none;
+    /*display: none;*/
 }
 
 #sms{

@@ -1,106 +1,105 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>SMS-to-112</title>
-        <meta charset="utf-8" />
-        <meta name="format-detection" content="telephone=no" />
-        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-        <link rel="stylesheet" type="text/css" href="css/index.css" />
-    </head>
-    <body>
-    <div class="app">
+<head>
+    <title>SMS-to-112</title>
+    <meta charset="utf-8"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+    <meta name="viewport"
+          content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi"/>
+    <link rel="stylesheet" type="text/css" href="css/index.css"/>
+</head>
+<body>
+<div class="app">
 
-        <div id="deviceready" class="blink">
+    <section class="question" id="start">
+        <h1>Co się stało?</h1>
 
-            <section class="question" id="start">
-                <h1>Co się stało?</h1>
-
-                <div class="link icon icon-fire" data-next="fire" data-hide="start" data-text="Odpowiedź 1, opcja 1. ">
-                    Pożar
-                </div>
-                <div class="link icon icon-crash" data-next="fire" data-hide="start" data-text="Odpowiedź 1, opcja 2. ">
-                    Wypadek
-                </div>
-                <div class="link icon icon-help" data-next="fire" data-hide="start" data-text="Odpowiedź 1, opcja 3. ">
-                    Pomoc
-                </div>
-                <div class="link icon icon-mug" data-next="fire" data-hide="start" data-text="Odpowiedź 1, opcja 3. ">
-                    Napad
-                </div>
-            </section>
-
-            <section class="question" id="fire">
-                <h1>Co się pali?</h1>
-
-                <div class="link icon icon-return" data-next="start" data-hide="fire">cofnij</div>
-                <div class="link icon icon-home" data-next="noofpeople" data-hide="fire"
-                     data-text="Odpowiedź 2, opcja 1. ">Budynek
-                </div>
-                <div class="link icon" data-next="noofpeople" data-hide="fire" data-text="Odpowiedź 2, opcja 2. ">Las
-                </div>
-                <div class="link icon" data-next="noofpeople" data-hide="fire" data-text="Odpowiedź 2, opcja 2. ">Pole
-                </div>
-                <div class="link icon" data-next="noofpeople" data-hide="fire" data-text="Odpowiedź 2, opcja 2. ">
-                    Fabryka
-                </div>
-                <div class="link icon" data-next="noofpeople" data-hide="fire" data-text="Odpowiedź 2, opcja 2. ">
-                    Pojazd
-                </div>
-            </section>
-
-            <section class="question" id="noofpeople">
-                <h1>Ile osób?</h1>
-
-                <div class="link icon icon-return" data-next="fire" data-hide="noofpeople">cofnij</div>
-                <div class="link icon" data-next="address" data-hide="noofpeople" data-text="Odpowiedź 2, opcja 1. ">1
-                    os.
-                </div>
-                <div class="link icon" data-next="address" data-hide="noofpeople" data-text="Odpowiedź 2, opcja 2. ">2
-                    os.
-                </div>
-                <div class="link icon" data-next="address" data-hide="noofpeople" data-text="Odpowiedź 2, opcja 2. ">3
-                    os.
-                </div>
-                <div class="link icon" data-next="address" data-hide="noofpeople" data-text="Odpowiedź 2, opcja 2. ">4
-                    os.
-                </div>
-                <div class="link icon" data-next="address" data-hide="noofpeople" data-text="Odpowiedź 2, opcja 2. ">5
-                    os.
-                </div>
-                <div class="link icon" data-next="address" data-hide="noofpeople" data-text="Odpowiedź 2, opcja 2. ">
-                    Więcej os.
-                </div>
-                <div class="link icon" data-next="address" data-hide="noofpeople" data-text="Odpowiedź 2, opcja 3. ">nie
-                    wiem
-                </div>
-            </section>
-
-            <section class="question" id="address">
-                <h1>Gdzie?</h1>
-
-                <div class="link icon icon-return" data-next="noofpeople" data-hide="address">cofnij</div>
-                <div class="link icon" data-next="send" data-hide="address" data-text="Odpowiedź 2, opcja 1. ">...</div>
-                <div class="link icon" data-next="send" data-hide="address" data-text="Odpowiedź 2, opcja 2. ">...</div>
-            </section>
-
-            <section class="question" id="send">
-                <h1>SMS został wysłany</h1>
-
-                <div id="sms">
-
-                </div>
-                <div class="link icon" data-next="start" data-hide="send">zakończ</div>
-            </section>
+        <div class="link icon icon-fire" data-next="fire" data-hide="start" data-text="Odpowiedź 1, opcja 1. ">
+            Pożar
         </div>
-    </div>
-        <script type="text/javascript" src="phonegap.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-        <script type="text/javascript">
-            app.initialize();
-            if (!navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry|IEMobile)/)) {
-                app.start(); //this is the browser
-            }
-        </script>
-    </body>
+        <div class="link icon icon-crash" data-next="fire" data-hide="start" data-text="Odpowiedź 1, opcja 2. ">
+            Wypadek
+        </div>
+        <div class="link icon icon-help" data-next="fire" data-hide="start" data-text="Odpowiedź 1, opcja 3. ">
+            Pomoc
+        </div>
+        <div class="link icon icon-mug" data-next="fire" data-hide="start" data-text="Odpowiedź 1, opcja 3. ">
+            Napad
+        </div>
+    </section>
+
+    <section class="question" id="fire">
+        <h1>Co się pali?</h1>
+
+        <div class="link icon icon-return" data-next="start" data-hide="fire">cofnij</div>
+        <div class="link icon icon-home" data-next="noofpeople" data-hide="fire"
+             data-text="Odpowiedź 2, opcja 1. ">Budynek
+        </div>
+        <div class="link icon" data-next="noofpeople" data-hide="fire" data-text="Odpowiedź 2, opcja 2. ">Las
+        </div>
+        <div class="link icon" data-next="noofpeople" data-hide="fire" data-text="Odpowiedź 2, opcja 2. ">Pole
+        </div>
+        <div class="link icon" data-next="noofpeople" data-hide="fire" data-text="Odpowiedź 2, opcja 2. ">
+            Fabryka
+        </div>
+        <div class="link icon" data-next="noofpeople" data-hide="fire" data-text="Odpowiedź 2, opcja 2. ">
+            Pojazd
+        </div>
+    </section>
+
+    <section class="question" id="noofpeople">
+        <h1>Ile osób?</h1>
+
+        <div class="link icon icon-return" data-next="fire" data-hide="noofpeople">cofnij</div>
+        <div class="link icon" data-next="address" data-hide="noofpeople" data-text="Odpowiedź 2, opcja 1. ">1
+            os.
+        </div>
+        <div class="link icon" data-next="address" data-hide="noofpeople" data-text="Odpowiedź 2, opcja 2. ">2
+            os.
+        </div>
+        <div class="link icon" data-next="address" data-hide="noofpeople" data-text="Odpowiedź 2, opcja 2. ">3
+            os.
+        </div>
+        <div class="link icon" data-next="address" data-hide="noofpeople" data-text="Odpowiedź 2, opcja 2. ">4
+            os.
+        </div>
+        <div class="link icon" data-next="address" data-hide="noofpeople" data-text="Odpowiedź 2, opcja 2. ">5
+            os.
+        </div>
+        <div class="link icon" data-next="address" data-hide="noofpeople" data-text="Odpowiedź 2, opcja 2. ">
+            Więcej os.
+        </div>
+        <div class="link icon" data-next="address" data-hide="noofpeople" data-text="Odpowiedź 2, opcja 3. ">nie
+            wiem
+        </div>
+    </section>
+
+    <section class="question" id="address">
+        <h1>Gdzie?</h1>
+
+        <div class="link icon icon-return" data-next="noofpeople" data-hide="address">cofnij</div>
+        <div class="link icon" data-next="send" data-hide="address" data-text="Odpowiedź 2, opcja 1. ">...</div>
+        <div class="link icon" data-next="send" data-hide="address" data-text="Odpowiedź 2, opcja 2. ">...</div>
+    </section>
+
+    <section class="question" id="send">
+        <h1>SMS został wysłany</h1>
+
+        <div id="sms">
+
+        </div>
+        <div class="link icon" data-next="start" data-hide="send">zakończ</div>
+    </section>
+
+</div>
+<script type="text/javascript" src="phonegap.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript">
+    app.initialize();
+    if (!navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry|IEMobile)/)) {
+        app.start(); //this is the browser
+    }
+</script>
+</body>
 </html>
