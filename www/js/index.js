@@ -35,17 +35,17 @@ var app = {
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
 
-        this.start();
-        //
+        app.start();
+
         var onSuccess = function(position) {
-            document.getElementById("geo").innerHTML('Latitude: ' + position.coords.latitude + '<br />' +
-                    'Longitude: ' + position.coords.longitude + '<br />' +
-                    'Altitude: ' + position.coords.altitude + '<br />' +
-                    'Accuracy: ' + position.coords.accuracy + '<br />' +
-                    'Altitude Accuracy: ' + position.coords.altitudeAccuracy + '<br />' +
-                    'Heading: ' + position.coords.heading + '<br />' +
-                    'Speed: ' + position.coords.speed + '<br />' +
-                    'Timestamp: ' + position.timestamp + '<br />');
+            alert('Latitude: '          + position.coords.latitude          + '\n' +
+                'Longitude: '         + position.coords.longitude         + '\n' +
+                'Altitude: '          + position.coords.altitude          + '\n' +
+                'Accuracy: '          + position.coords.accuracy          + '\n' +
+                'Altitude Accuracy: ' + position.coords.altitudeAccuracy  + '\n' +
+                'Heading: '           + position.coords.heading           + '\n' +
+                'Speed: '             + position.coords.speed             + '\n' +
+                'Timestamp: '         + position.timestamp                + '\n');
         };
 
 // onError Callback receives a PositionError object
@@ -61,16 +61,9 @@ var app = {
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
-        var parentElement = document.getElementById(id);
-        var listeningElement = parentElement.querySelector('.listening');
-        var receivedElement = parentElement.querySelector('.received');
 
-        listeningElement.setAttribute('style', 'display:none;');
-        receivedElement.setAttribute('style', 'display:block;');
-
-        console.log('Received Event: ' + id);
     },
-    start: function() {
+  start: function() {
         document.querySelector('#start').style.display = 'block';
 
 //          pytania główne
