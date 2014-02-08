@@ -34,6 +34,30 @@ var app = {
     // function, we must explicity call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
+
+
+        //
+        var onSuccess = function(position) {
+            document.getElementById("geo").innerHTML('Latitude: '          + position.coords.latitude          + '<br />' +
+                'Longitude: '         + position.coords.longitude         + '<br />' +
+                'Altitude: '          + position.coords.altitude          + '<br />' +
+                'Accuracy: '          + position.coords.accuracy          + '<br />' +
+                'Altitude Accuracy: ' + position.coords.altitudeAccuracy  + '<br />' +
+                'Heading: '           + position.coords.heading           + '<br />' +
+                'Speed: '             + position.coords.speed             + '<br />' +
+                'Timestamp: '         + position.timestamp                + '<br />');
+        };
+
+// onError Callback receives a PositionError object
+//
+        function onError(error) {
+            alert('code: '    + error.code    + '\n' +
+                'message: ' + error.message + '\n');
+        }
+
+        navigator.geolocation.getCurrentPosition(onSuccess, onError);
+
+
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
