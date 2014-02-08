@@ -50,10 +50,10 @@ var app = {
             alert('code: ' + error.code + '\n' +
                 'message: ' + error.message + '\n');
         }
-alert(navigator);
-        alert(navigator.geolocation);
-        alert(navigator.geolocation.getCurrentPosition)
+
         navigator.geolocation.getCurrentPosition(onSuccess, onError);
+        navigator.geolocation.getCurrentPosition(onSuccess, onError, {maximumAge: 300000, timeout:10000, enableHighAccuracy : true});
+
 
     },
     // function, we must explicity call 'app.receivedEvent(...);'
