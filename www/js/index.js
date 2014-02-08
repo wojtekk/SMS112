@@ -82,7 +82,7 @@ alert(navigator);
             var longitude = position.coords.longitude;
             var accuracy = position.coords.accuracy;
 
-            document.querySelector('#question-address-gps').setAttribute('data-text', latitude + '|' + longitude + '|' + accuracy);
+            document.querySelector('#question-address-gps').setAttribute('data-text', 'GPS: '+ latitude, + '|' + longitude);
 
             var geocoder = new google.maps.Geocoder();
             var lat = parseFloat(latitude);
@@ -91,8 +91,8 @@ alert(navigator);
             geocoder.geocode({'latLng': latlng}, function(results, status) {
                 if (status == google.maps.GeocoderStatus.OK) {
                     if (results[1]) {
-                        document.querySelector('#question-address-gps').innerHTML += results[1].formatted_address;
-                        document.querySelector('#question-address-gps').setAttribute('data-text', document.querySelector('#question-address-gps').getAttribute('data-text') + '|' + results[1].formatted_address);
+                        document.querySelector('#question-address-gps').innerHTML += results[0].formatted_address;
+                        document.querySelector('#question-address-gps').setAttribute('data-text', document.querySelector('#question-address-gps').getAttribute('data-text') + '|' + results[0].formatted_address);
                     } else {
                         console.log('No results found');
                         alert('No results found');
