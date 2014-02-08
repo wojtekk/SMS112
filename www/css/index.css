@@ -104,3 +104,6 @@ h1{
     line-height: 80px;
     min-height: 80px;
 }
+#myframe{
+    display: none;
+}

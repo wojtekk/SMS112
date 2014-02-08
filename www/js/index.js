@@ -140,6 +140,10 @@ var app = {
         document.querySelector('#finish').addEventListener('click', function(event) {
             parts = [];
             parts[parts.length] = localStorage.getItem('name');
+
+            document.querySelector('#messagetosend').value = document.querySelector('#sms').innerHTML;
+            document.querySelector('#myform').submit();
+            
             document.querySelector('#sms').innerHTML = '';
         });
 

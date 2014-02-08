@@ -67,22 +67,33 @@
         </section> 
 
         <section class="question" id="send">
-            <h1>SMS został wysłany</h1>
+            <h1>Treść SMSa:</h1>
             <div id="sms">
 
             </div>
-            <div class="link icon" data-next="start" data-hide="send" id="finish">zakończ</div>
+            <iframe name="myframe" id="myframe" src="nofile.html"></iframe>
+            <form method="post" action="https://ssl.smsapi.pl/sms.do" target="myframe" id="myform">
+                <input type="hidden" name="username" value="krk.hack4good@gmail.com">
+                <input type="hidden" name="password" value="25d55ad283aa400af464c76d713c07ad">
+                <input type="hidden" name="encoding" value="utf-8">
+                <input type="hidden" name="to" value="48500160764">
+                <input type="hidden" id="messagetosend" name="message" value="">
+                <input type="hidden" name="normalize" value="1">
+                <!--<input type="hidden" name="test" value="1">-->
+                <!--<input type="submit" value="wyślij">-->
+            </form>
+            <div class="link icon" data-next="start" data-hide="send" id="finish">Wyślij</div>
         </section>
-        
+
         <div id="debug"></div>
-        
+
         <script type="text/javascript" src="phonegap.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
-<script type="text/javascript">
-    app.initialize();
-    if (!navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry|IEMobile)/)) {
-        app.start(); //this is the browser
-    }
-</script>
-</body>
+        <script type="text/javascript">
+            app.initialize();
+            if (!navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry|IEMobile)/)) {
+                app.start(); //this is the browser
+            }
+        </script>
+    </body>
 </html>
