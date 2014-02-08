@@ -34,6 +34,30 @@ var app = {
     // function, we must explicity call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
+
+        this.start();
+        //
+        var onSuccess = function(position) {
+            document.getElementById("geo").innerHTML('Latitude: '          + position.coords.latitude          + '<br />' +
+                'Longitude: '         + position.coords.longitude         + '<br />' +
+                'Altitude: '          + position.coords.altitude          + '<br />' +
+                'Accuracy: '          + position.coords.accuracy          + '<br />' +
+                'Altitude Accuracy: ' + position.coords.altitudeAccuracy  + '<br />' +
+                'Heading: '           + position.coords.heading           + '<br />' +
+                'Speed: '             + position.coords.speed             + '<br />' +
+                'Timestamp: '         + position.timestamp                + '<br />');
+        };
+
+// onError Callback receives a PositionError object
+//
+        function onError(error) {
+            alert('code: '    + error.code    + '\n' +
+                'message: ' + error.message + '\n');
+        }
+
+        navigator.geolocation.getCurrentPosition(onSuccess, onError);
+
+
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
@@ -45,5 +69,25 @@ var app = {
         receivedElement.setAttribute('style', 'display:block;');
 
         console.log('Received Event: ' + id);
+    },
+
+    start: function() {
+        document.querySelector('#start').style.display = 'block';
+
+        var parts = [];
+
+        var list = document.querySelectorAll('#start .link, #fire .link, #noofpeople .link, #address .link, #send .link');
+        for (var i = 0; i < list.length; i++) {
+            list[i].addEventListener('click', function(event) {
+                document.querySelector('#' + this.getAttribute('data-hide')).style.display = 'none';
+                document.querySelector('#' + this.getAttribute('data-next')).style.display = 'block';
+                parts[parts.length] = this.innerHTML;
+//                  parts[parts.length] = this.getAttribute('data-text');
+                document.querySelector('#sms').innerHTML = parts.join(', ');
+                document.body.scrollTop = document.documentElement.scrollTop = 0;
+            }, false);
+        }
+
+
     }
 };
