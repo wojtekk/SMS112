@@ -18,14 +18,15 @@
  */
 body{
     font: 2em Tahoma;
+    background: #e74c3c;
 }
 h1{
     font-size: 1em;
 }
 .link, .settings{
-    border-radius: 5px;
-    background: #6FE64E;
-    border: solid 1px #999;
+    /*border-radius: 5px;*/
+    background: #fff;
+    /*border: solid 1px #999;*/
     text-align: center;
     line-height: 96px;
     margin-bottom: 10px;
