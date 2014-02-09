@@ -108,6 +108,7 @@ var app = {
                 document.querySelector('#' + this.getAttribute('data-next')).style.display = 'block';
 
                 document.querySelector('#name').value = localStorage.getItem('name');
+                document.querySelector('#targetphone').value = localStorage.getItem('targetphone');
                 document.querySelector('#address1').value = localStorage.getItem('address1');
                 document.querySelector('#address2-description').value = localStorage.getItem('address2-description');
                 document.querySelector('#address2-value').value = localStorage.getItem('address2-value');
@@ -120,6 +121,7 @@ var app = {
             parts = [];
             parts[parts.length] = localStorage.getItem('name');
 
+            document.querySelector('#to').value = localStorage.getItem('targetphone');
             document.querySelector('#messagetosend').value = document.querySelector('#sms').innerHTML;
             document.querySelector('#myform').submit();
 
@@ -128,6 +130,8 @@ var app = {
 
         document.querySelector('#save').addEventListener('click', function(event) {
             localStorage.setItem('name', document.querySelector('#name').value);
+            
+            localStorage.setItem('targetphone', document.querySelector('#targetphone').value);
 
             parts[parts.length] = localStorage.getItem('name');
 

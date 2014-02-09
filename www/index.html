@@ -12,6 +12,7 @@
         <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
     </head>
     <body>
+        <h1>SMS 112</h1>
         <section class="question" id="start">
             <h1>Co się stało?</h1>
             <div class="link icon icon-fire"        data-next="fire"    data-hide="start"   data-text="Pożar">Pożar</div>
@@ -32,21 +33,21 @@
         </section>
 
         <section class="question" id="noofpeople">
-            <h1>Ile osób?</h1>
+            <h1>Ile zagrożonych?</h1>
             <div class="link icon icon-return" data-next="fire" data-hide="noofpeople">cofnij</div>
-            <div class="link icon" data-next="address" data-hide="noofpeople" data-text="1 osoba poszkodowana">1 os.</div>
-            <div class="link icon" data-next="address" data-hide="noofpeople" data-text="2 osoby poszkodowane">2 os.</div>
-            <div class="link icon" data-next="address" data-hide="noofpeople" data-text="3 osoby poszkodowane">3 os.</div>
-            <div class="link icon" data-next="address" data-hide="noofpeople" data-text="więcej niż 3 osoby poszkodowane">Więcej os.</div>
-            <div class="link icon" data-next="address" data-hide="noofpeople" data-text="nie wiem ile osób poszkodowanych">nie wiem</div>
+            <div class="link icon icon-oneperson" data-next="address" data-hide="noofpeople" data-text="1 osoba poszkodowana">1 os.</div>
+            <div class="link icon icon-twopersons" data-next="address" data-hide="noofpeople" data-text="2 osoby poszkodowane">2 os.</div>
+            <div class="link icon icon-threepersons" data-next="address" data-hide="noofpeople" data-text="3 osoby poszkodowane">3 os.</div>
+            <div class="link icon icon-morepersons" data-next="address" data-hide="noofpeople" data-text="więcej niż 3 osoby poszkodowane">Więcej os.</div>
+            <div class="link icon icon-noidea" data-next="address" data-hide="noofpeople" data-text="nie wiem ile osób poszkodowanych">nie wiem</div>
         </section>
 
         <section class="question" id="address">
             <h1>Gdzie?</h1>
             <div class="link icon icon-return" data-next="noofpeople" data-hide="address">cofnij</div>
-            <div class="link icon" id="question-address1" data-next="send" data-hide="address" data-text="Odpowiedź 2, opcja 1. ">Dom</div>
-            <div class="link icon" id="question-address2" data-next="send" data-hide="address" data-text="niepodane">...</div>
-            <div class="link icon" id="question-address-gps" data-next="send" data-hide="address" data-text="gps">GPS:<span></span> </div>
+            <div class="link icon icon-mappin" id="question-address1" data-next="send" data-hide="address" data-text="Odpowiedź 2, opcja 1. ">Dom</div>
+            <div class="link icon icon-mappin" id="question-address2" data-next="send" data-hide="address" data-text="niepodane">...</div>
+            <div class="link icon icon-gps" id="question-address-gps" data-next="send" data-hide="address" data-text="gps">GPS:<span></span> </div>
         </section> 
 
         <section class="question" id="settings">
@@ -55,13 +56,16 @@
                 <input class="input-settings" type="text" id="name" placeholder="Twoje imię i nazwisko">
             </p>
             <p>
-                Dom: <input class="input-settings" type="text" id="address1" placeholder="Dokładny adres domowy">
+                Telefon docelowy: <input class="input-settings" type="text" id="targetphone" placeholder="np: 48500500500">
+            </p>
+            <p>
+                Dom: <input class="input-settings" type="text" id="address1" placeholder="Dokładny adres">
             </p>
             <p>
                 Inne miejsce: 
-                <input class="input-settings" type="text" id="address2-description" placeholder="Opis miejsca, np.: 'praca'">
+                <input class="input-settings" type="text" id="address2-description" placeholder="Opis, np.: 'praca'">
                 <br>
-                <input class="input-settings" type="text" id="address2-value" placeholder="Dokładny adres miejsca:">
+                <input class="input-settings" type="text" id="address2-value" placeholder="Dokładny adres">
             </p>
             <p>
                 <button class="input-settings button-settings" id="save" data-next="start" data-hide="settings">Zapisz</button>
@@ -69,6 +73,8 @@
         </section> 
 
         <section class="question" id="send">
+            <div class="link icon icon-return" data-next="address" data-hide="send">cofnij</div>
+
             <h1>Treść SMSa:</h1>
             <div id="sms">
 
@@ -78,14 +84,13 @@
                 <input type="hidden" name="username" value="krk.hack4good@gmail.com">
                 <input type="hidden" name="password" value="25d55ad283aa400af464c76d713c07ad">
                 <input type="hidden" name="encoding" value="utf-8">
-                <input type="hidden" name="to" value="48500160764">
+                <input type="hidden" id="to" name="to" value="48500160764">
                 <input type="hidden" id="messagetosend" name="message" value="">
                 <input type="hidden" name="normalize" value="1">
                 <!--<input type="hidden" name="test" value="1">-->
                 <!--<input type="submit" value="wyślij">-->
             </form>
-            <div class="link icon" data-next="start" data-hide="send" id="finish">Wyślij</div>
-            <div class="link icon icon-return" data-next="address" data-hide="send">cofnij</div>
+            <div class="link icon icon-send" data-next="start" data-hide="send" id="finish" data-text=" Proszę o pomoc.">Wyślij</div>
         </section>
 
         <div id="debug"></div>
