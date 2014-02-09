@@ -4,7 +4,7 @@
     <description>SMS112</description>
     <author email="wojtekk@gmail.com" href="https://geekli.st/hackathon/52c49d837689332d5f000019/project/52f66693f9f1474d002fa431">Kuba i Wojtek</author>
     <access origin="*"/>
-    <preference name="fullscreen" value="true"/>
+    <preference name="fullscreen" value="false"/>
     <preference name="webviewbounce" value="false"/>
     <preference name="prerendered-icon" value="true" />
     <preference name="BackupWebStorage" value="cloud"/>
