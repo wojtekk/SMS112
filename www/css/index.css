@@ -16,8 +16,18 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+
+@font-face {
+  font-family: 'Maven Pro';
+  src: url('../fonts/maven_pro_regular-webfont.eot');
+  src: local('Maven Pro'),
+    url("../fonts/maven_pro_regular-webfont.woff") format("woff"),
+    url("../fonts/maven_pro_regular.otf") format("opentype"),
+    url("../fonts/maven_pro_regular-webfont.svg") format("svg");
+}
+
 body{
-    font: 2em Tahoma;
+    font: 2em 'Maven Pro';
     background: #e74c3c;
     color: #FFF;
     margin: 0;
@@ -31,7 +41,7 @@ h1.title {
     background: #c0392b;
     padding: 0 2% 0 2%;
     margin: 0 0 1em 0;
-    font-size: 0.5em;
+    font-size: 0.6em;
     color:#fff;
     min-height: 0px;
     height: auto;
