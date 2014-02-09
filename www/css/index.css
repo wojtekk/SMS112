@@ -106,7 +106,8 @@ p{
     background-image: url(../img/morepersons.png);   
 }
 .icon-noidea{
-    background-image: url(../img/noidea.png);   
+    background-image: url(../img/noidea.png); 
+    background-size: 65px 65px;
 }
 .icon-mappin{
     background-image: url(../img/mappin.png);
