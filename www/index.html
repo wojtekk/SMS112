@@ -12,9 +12,9 @@
         <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
     </head>
     <body>
-        <h1 class="title">SMS 112</h1>
+        <h1 class="title">Zgłoszenie zdarzenia przez SMS na 112</h1>
         <section class="question" id="start">
-            <h1>Co się stało?</h1>
+            <h1>1. Co się stało?</h1>
             <div class="link icon icon-fire"        data-next="fire"    data-hide="start"   data-text="Pożar">Pożar</div>
             <!--            <div class="link icon icon-crash"   data-next="crash"   data-hide="start"   data-text="Wypadek samochodowy">Wypadek</div>
                         <div class="link icon icon-help"    data-next="help"    data-hide="start"   data-text="Pomoc w zasłabnięciu">Pomoc</div>-->
@@ -23,8 +23,8 @@
         </section>
 
         <section class="question" id="fire">
-            <h1>Co się pali?</h1>
-            <div class="link icon icon-return" data-next="start" data-hide="fire">cofnij</div>
+            <h1>2. Co się pali?</h1>
+            <div class="link icon icon-return" data-next="start" data-hide="fire">Cofnij</div>
             <div class="link icon icon-home" data-next="noofpeople" data-hide="fire" data-text="Budynek mieszkalny">Budynek</div>
 <!--                        <div class="link icon" data-next="" data-hide="fire" data-text="Las">Las</div>
                         <div class="link icon" data-next="" data-hide="fire" data-text="Pole">Pole</div>-->
@@ -33,18 +33,18 @@
         </section>
 
         <section class="question" id="noofpeople">
-            <h1>Ile zagrożonych?</h1>
-            <div class="link icon icon-return" data-next="fire" data-hide="noofpeople">cofnij</div>
-            <div class="link icon icon-oneperson" data-next="address" data-hide="noofpeople" data-text="1 osoba poszkodowana">1 os.</div>
-            <div class="link icon icon-twopersons" data-next="address" data-hide="noofpeople" data-text="2 osoby poszkodowane">2 os.</div>
-            <div class="link icon icon-threepersons" data-next="address" data-hide="noofpeople" data-text="3 osoby poszkodowane">3 os.</div>
-            <div class="link icon icon-morepersons" data-next="address" data-hide="noofpeople" data-text="więcej niż 3 osoby poszkodowane">Więcej os.</div>
-            <div class="link icon icon-noidea" data-next="address" data-hide="noofpeople" data-text="nie wiem ile osób poszkodowanych">nie wiem</div>
+            <h1>3. Ile zagrożonych?</h1>
+            <div class="link icon icon-return" data-next="fire" data-hide="noofpeople">Cofnij</div>
+            <div class="link icon icon-oneperson" data-next="address" data-hide="noofpeople" data-text="1 osoba poszkodowana">1 osoba</div>
+            <div class="link icon icon-twopersons" data-next="address" data-hide="noofpeople" data-text="2 osoby poszkodowane">2 osoby</div>
+            <div class="link icon icon-threepersons" data-next="address" data-hide="noofpeople" data-text="3 osoby poszkodowane">3 osoby</div>
+            <div class="link icon icon-morepersons" data-next="address" data-hide="noofpeople" data-text="więcej niż 3 osoby poszkodowane">Więcej osób</div>
+            <div class="link icon icon-noidea" data-next="address" data-hide="noofpeople" data-text="nie wiem ile osób poszkodowanych">Nie wiem</div>
         </section>
 
         <section class="question" id="address">
-            <h1>Gdzie?</h1>
-            <div class="link icon icon-return" data-next="noofpeople" data-hide="address">cofnij</div>
+            <h1>4. Gdzie?</h1>
+            <div class="link icon icon-return" data-next="noofpeople" data-hide="address">Cofnij</div>
             <div class="link icon icon-mappin" id="question-address1" data-next="send" data-hide="address" data-text="Odpowiedź 2, opcja 1. ">Dom</div>
             <div class="link icon icon-mappin" id="question-address2" data-next="send" data-hide="address" data-text="niepodane">...</div>
             <div class="link icon icon-gps" id="question-address-gps" data-next="send" data-hide="address" data-text="gps">GPS:<span></span> </div>
@@ -72,7 +72,7 @@
         </section> 
 
         <section class="question" id="send">
-            <div class="link icon icon-return" data-next="address" data-hide="send">cofnij</div>
+            <div class="link icon icon-return" data-next="address" data-hide="send">Cofnij</div>
 
             <h1>Treść SMSa:</h1>
             <div id="sms">
@@ -96,9 +96,9 @@
 
         <script>
             app.initialize();
-            if (!navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry|IEMobile)/)) {
+           // if (!navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry|IEMobile)/)) {
                 app.start(); //this is the browser
-            }
+           // }
         </script>
     </body>
 </html>

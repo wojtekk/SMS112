@@ -27,17 +27,24 @@ h1{
     margin: 0 auto 0.5em 0;
     padding: 0 2%;
 }
+h1.title {
+    background: #c0392b;
+    padding: 0 2% 0 2%;
+    margin: 0 0 1em 0;
+    font-size: 0.5em;
+    color:#fff;
+    min-height: 0px;
+    height: auto;
+    text-align:center;
+}
 p{
     margin: 0.5em auto;
-}
-.title{
-    margin-bottom: 0;
 }
 .link, .settings{
     /*border-radius: 5px;*/
     background: #fff;
     /*border: solid 1px #999;*/
-    text-align: center;
+    text-align: left;
     line-height: 96px;
     margin-bottom: 2px;
     font-size: 1.2em;
@@ -53,6 +60,7 @@ p{
 }
 .icon-fire{
     background-image: url(../img/fire.png);
+    background-size: 70px 70px;
 }
 .icon-help{
     background-image: url(../img/help.png);
@@ -62,29 +70,34 @@ p{
 }
 .icon-crash, .icon-car{
     background-image: url(../img/crash.png);
+    background-position-x: 5px
 }
 .icon-home{
     background-image: url(../img/home.png);
+    background-size: 70px 70px;
 }
 .icon-factory{
     background-image: url(../img/factory.png);
+    background-position-x: 0
 }
 .icon-return{
     background-image: url(../img/return.png);
     background-size: 64px 64px;
-/*    background-color: #c0392b;
-    color: #FFF;
+    background-color: #f5b7b1;
+/*    color: #FFF;
     border: solid 1px #c0392b;*/
     height: 80px;
     line-height: 80px;
     font-size: 1em;   
-    padding-left: 80px;
+    /*padding-left: 80px;*/
 }
 .icon-oneperson{
     background-image: url(../img/oneperson.png);   
+    background-size: 80px 80px;
 }
 .icon-twopersons{
-    background-image: url(../img/twopersons.png);   
+    background-image: url(../img/twopersons.png); 
+    background-size: 80px 80px;
 }
 .icon-threepersons{
     background-image: url(../img/threepersons.png);   
@@ -96,24 +109,28 @@ p{
     background-image: url(../img/noidea.png);   
 }
 .icon-mappin{
-    background-image: url(../img/mappin.png);   
+    background-image: url(../img/mappin.png);
+    background-size: 60px 60px;
 }
 .icon-gps{
-    background-image: url(../img/gps.png);   
+    background-image: url(../img/gps.png);  
+    background-size: 60px 60px;
 }
 .icon-send{
-    background-image: url(../img/send.png);   
+    background-image: url(../img/send.png); 
+    background-size: 60px 60px;
 }
 
 .settings{
     background-image: url(../img/settings.png);
     background-size: 64px 64px;
+    background-color: #f5b7b1;
 /*    background-color: #c0392b;
     color: #FFF;
     border: solid 1px #c0392b;*/
     line-height: 80px;
     font-size: 1em;  
-    padding-left: 80px;
+    /*padding-left: 80px;*/
 }
 
 .question{
