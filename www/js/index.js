@@ -50,9 +50,8 @@ var app = {
         navigator.geolocation.getCurrentPosition(function(position) {
             var latitude = position.coords.latitude;
             var longitude = position.coords.longitude;
-            var accuracy = position.coords.accuracy;
 
-            document.querySelector('#question-address-gps').setAttribute('data-text', 'GPS: '+ latitude, + '|' + longitude);
+            document.querySelector('#question-address-gps').setAttribute('data-text', 'GPS: ' + parseFloat(latitude).toFixed(6) +',' + parseFloat(longitude).toFixed(6));
 
             var geocoder = new google.maps.Geocoder();
             var lat = parseFloat(latitude);
@@ -62,7 +61,7 @@ var app = {
                 if (status == google.maps.GeocoderStatus.OK) {
                     if (results[1]) {
                         document.querySelector('#question-address-gps').innerHTML += results[0].formatted_address;
-                        document.querySelector('#question-address-gps').setAttribute('data-text', document.querySelector('#question-address-gps').getAttribute('data-text') + '|' + results[0].formatted_address);
+                        document.querySelector('#question-address-gps').setAttribute('data-text', document.querySelector('#question-address-gps').getAttribute('data-text') + ': ' + results[0].formatted_address);
                     } else {
                         console.log('No results found');
                         alert('No results found');
@@ -90,7 +89,11 @@ var app = {
             list[i].addEventListener('click', function(event) {
                 document.querySelector('#' + this.getAttribute('data-hide')).style.display = 'none';
                 document.querySelector('#' + this.getAttribute('data-next')).style.display = 'block';
-                parts[parts.length] = this.getAttribute('data-text');
+                if (this.getAttribute('data-text')) {
+                    parts[parts.length] = this.getAttribute('data-text');
+                } else {
+                    parts.pop();
+                }
                 document.querySelector('#sms').innerHTML = parts.join(', ');
                 document.body.scrollTop = document.documentElement.scrollTop = 0;
             }, false);
@@ -119,7 +122,7 @@ var app = {
 
             document.querySelector('#messagetosend').value = document.querySelector('#sms').innerHTML;
             document.querySelector('#myform').submit();
-            
+
             document.querySelector('#sms').innerHTML = '';
         });
 
