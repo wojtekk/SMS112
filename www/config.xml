@@ -2,7 +2,7 @@
 <widget xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" id="com.coolappz.sms112" version="1.0.0">
     <name>SMS112</name>
     <description>SMS112</description>
-    <author href="https://geekli.st/hackathon/52c49d837689332d5f000019/project/52f66693f9f1474d002fa431?tab=about">Wojtek i Kuba</author>
+    <author email="wojtekk@gmail.com" href="https://geekli.st/hackathon/52c49d837689332d5f000019/project/52f66693f9f1474d002fa431">Kuba i Wojtek</author>
     <access origin="*"/>
     <preference name="fullscreen" value="true"/>
     <preference name="webviewbounce" value="false"/>
