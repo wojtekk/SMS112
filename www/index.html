@@ -12,7 +12,7 @@
         <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
     </head>
     <body>
-        <h1>SMS 112</h1>
+        <h1 class="title">SMS 112</h1>
         <section class="question" id="start">
             <h1>Co się stało?</h1>
             <div class="link icon icon-fire"        data-next="fire"    data-hide="start"   data-text="Pożar">Pożar</div>
@@ -26,10 +26,10 @@
             <h1>Co się pali?</h1>
             <div class="link icon icon-return" data-next="start" data-hide="fire">cofnij</div>
             <div class="link icon icon-home" data-next="noofpeople" data-hide="fire" data-text="Budynek mieszkalny">Budynek</div>
-            <!--            <div class="link icon" data-next="" data-hide="fire" data-text="Las">Las</div>
-                        <div class="link icon" data-next="" data-hide="fire" data-text="Pole">Pole</div>
-                        <div class="link icon" data-next="" data-hide="fire" data-text="Fabryka">Fabryka</div>
-                        <div class="link icon" data-next="" data-hide="fire" data-text="Pojazd">Pojazd</div>-->
+<!--                        <div class="link icon" data-next="" data-hide="fire" data-text="Las">Las</div>
+                        <div class="link icon" data-next="" data-hide="fire" data-text="Pole">Pole</div>-->
+                        <div class="link icon icon-factory" data-next="noofpeople" data-hide="fire" data-text="Fabryka">Fabryka</div>
+                        <div class="link icon icon-car" data-next="noofpeople" data-hide="fire" data-text="Pojazd">Pojazd</div>
         </section>
 
         <section class="question" id="noofpeople">
@@ -64,7 +64,6 @@
             <p>
                 Inne miejsce: 
                 <input class="input-settings" type="text" id="address2-description" placeholder="Opis, np.: 'praca'">
-                <br>
                 <input class="input-settings" type="text" id="address2-value" placeholder="Dokładny adres">
             </p>
             <p>

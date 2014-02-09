@@ -19,9 +19,19 @@
 body{
     font: 2em Tahoma;
     background: #e74c3c;
+    color: #FFF;
+    margin: 0;
 }
 h1{
     font-size: 1em;
+    margin: 0 auto 0.5em 0;
+    padding: 0 2%;
+}
+p{
+    margin: 0.5em auto;
+}
+.title{
+    margin-bottom: 0;
 }
 .link, .settings{
     /*border-radius: 5px;*/
@@ -29,9 +39,10 @@ h1{
     /*border: solid 1px #999;*/
     text-align: center;
     line-height: 96px;
-    margin-bottom: 10px;
+    margin-bottom: 2px;
     font-size: 1.2em;
     cursor: pointer;
+    color: #000;
 }
 
 .icon{
@@ -49,15 +60,21 @@ h1{
 .icon-mug{
     background-image: url(../img/mug.png);
 }
-.icon-crash{
+.icon-crash, .icon-car{
     background-image: url(../img/crash.png);
 }
 .icon-home{
     background-image: url(../img/home.png);
 }
+.icon-factory{
+    background-image: url(../img/factory.png);
+}
 .icon-return{
     background-image: url(../img/return.png);
     background-size: 64px 64px;
+/*    background-color: #c0392b;
+    color: #FFF;
+    border: solid 1px #c0392b;*/
     height: 80px;
     line-height: 80px;
     font-size: 1em;   
@@ -91,6 +108,9 @@ h1{
 .settings{
     background-image: url(../img/settings.png);
     background-size: 64px 64px;
+/*    background-color: #c0392b;
+    color: #FFF;
+    border: solid 1px #c0392b;*/
     line-height: 80px;
     font-size: 1em;  
     padding-left: 80px;
@@ -108,8 +128,8 @@ h1{
 
 .input-settings{
     display: block;
-    border-radius: 5px;
-    border: solid 1px #999;
+    background: #FFF;
+    border: solid 1px #CCC;
     width: 95%;
     margin: 0 auto;
     font-size: 1em;
