@@ -60,11 +60,14 @@ p{
 .icon-mug{
     background-image: url(../img/mug.png);
 }
-.icon-crash{
+.icon-crash, .icon-car{
     background-image: url(../img/crash.png);
 }
 .icon-home{
     background-image: url(../img/home.png);
+}
+.icon-factory{
+    background-image: url(../img/factory.png);
 }
 .icon-return{
     background-image: url(../img/return.png);
