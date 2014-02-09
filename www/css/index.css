@@ -35,7 +35,7 @@ h1{
 
 .icon{
     padding-left: 110px;
-        background-size: 96px 96px;
+    background-size: 96px 96px;
     background-position: 10px 50%;
     background-repeat: no-repeat;
 }
@@ -61,6 +61,30 @@ h1{
     line-height: 80px;
     font-size: 1em;   
     padding-left: 80px;
+}
+.icon-oneperson{
+    background-image: url(../img/oneperson.png);   
+}
+.icon-twopersons{
+    background-image: url(../img/twopersons.png);   
+}
+.icon-threepersons{
+    background-image: url(../img/threepersons.png);   
+}
+.icon-morepersons{
+    background-image: url(../img/morepersons.png);   
+}
+.icon-noidea{
+    background-image: url(../img/noidea.png);   
+}
+.icon-mappin{
+    background-image: url(../img/mappin.png);   
+}
+.icon-gps{
+    background-image: url(../img/gps.png);   
+}
+.icon-send{
+    background-image: url(../img/send.png);   
 }
 
 .settings{
@@ -99,7 +123,7 @@ h1{
 }
 
 #question-address-gps{
-    padding-left: 0;
+    /*padding-left: 0;*/
     font-size: 0.5em;
     line-height: 80px;
     min-height: 80px;
