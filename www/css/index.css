@@ -16,18 +16,8 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-
-@font-face {
-  font-family: 'Maven Pro';
-  src: url('../fonts/maven_pro_regular-webfont.eot');
-  src: local('Maven Pro'),
-    url("../fonts/maven_pro_regular-webfont.woff") format("woff"),
-    url("../fonts/maven_pro_regular.otf") format("opentype"),
-    url("../fonts/maven_pro_regular-webfont.svg") format("svg");
-}
-
 body{
-    font: 2em 'Maven Pro';
+    font: 2em Tahoma;
     background: #e74c3c;
     color: #FFF;
     margin: 0;
