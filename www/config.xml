@@ -2,11 +2,17 @@
 <widget xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" id="com.coolappz.sms112" version="1.0.0">
     <name>SMS112</name>
     <description>SMS112</description>
-    <author email="info@com.coolappz" href="http://www.coolappz.com">wojtek</author>
+    <author href="https://geekli.st/hackathon/52c49d837689332d5f000019/project/52f66693f9f1474d002fa431?tab=about">Wojtek i Kuba</author>
     <access origin="*"/>
     <preference name="fullscreen" value="true"/>
     <preference name="webviewbounce" value="false"/>
-    <preference name="KeyboardShrinksView" value="true"/>
+    <preference name="prerendered-icon" value="true" />
     <preference name="BackupWebStorage" value="cloud"/>
     <preference name="disallowOverscroll" value="true"/>
+    <preference name="exit-on-suspend" value="false" />
+    <icon src="icon.png" />
+    <icon gap:density="ldpi" gap:platform="android" src="res/icon/android/icon-36-ldpi.png" />
+    <icon gap:density="mdpi" gap:platform="android" src="res/icon/android/icon-48-mdpi.png" />
+    <icon gap:density="hdpi" gap:platform="android" src="res/icon/android/icon-72-hdpi.png" />
+    <icon gap:density="xhdpi" gap:platform="android" src="res/icon/android/icon-96-xhdpi.png" />
 </widget>
