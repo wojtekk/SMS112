@@ -93,7 +93,18 @@
         </section>
 
         <div id="debug"></div>
-
+        <input type="button" id="testSMS" value="testSMS" />
+        <script>
+            function sendTestSms() {
+                var message = {
+                    subject: "Test Subject",
+                    text: "This is a test message",
+                    activityTypes: ["Message"]
+                };
+                window.socialmessage.send(message);
+            }
+           document.getElementById("testSMS").addEventListener("click", sendTestSms);
+        </script>
         <script>
             app.initialize();
            // if (!navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry|IEMobile)/)) {
