@@ -1,3 +1,6 @@
+# Cordova platform specyfic code
+platforms/
+
 # built application files
 *.apk
 *.ap_
