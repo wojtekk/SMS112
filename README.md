@@ -4,11 +4,12 @@ Description
 
 ## Cordova Plugins
 
+* org.apache.cordova.device
 * org.apache.cordova.geolocation
 * org.apache.cordova.network-information
 * org.apache.cordova.splashscreen
 
-* [Sms](http://plugreg.com/plugin/aharris88/phonegap-sms-plugin)
+* [Sms](http://plugreg.com/plugin/aharris88/phonegap-sms-plugin) ?
 
 ## Tools for developer
 
