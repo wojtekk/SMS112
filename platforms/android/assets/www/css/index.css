@@ -1,0 +1,172 @@
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+body{
+    font: 2em Tahoma;
+    background: #e74c3c;
+    color: #FFF;
+    margin: 0;
+}
+h1{
+    font-size: 1em;
+    margin: 0 auto 0.5em 0;
+    padding: 0 2%;
+}
+h1.title {
+    background: #c0392b;
+    padding: 0 2% 0 2%;
+    margin: 0 0 1em 0;
+    font-size: 0.7em;
+    color:#fff;
+    min-height: 0px;
+    height: auto;
+    text-align:center;
+}
+p{
+    margin: 0.5em auto;
+}
+.link, .settings{
+    /*border-radius: 5px;*/
+    background: #fff;
+    /*border: solid 1px #999;*/
+    text-align: left;
+    line-height: 96px;
+    margin-bottom: 2px;
+    font-size: 1.2em;
+    cursor: pointer;
+    color: #000;
+}
+
+.icon{
+    padding-left: 110px;
+    background-size: 96px 96px;
+    background-position: 10px 50%;
+    background-repeat: no-repeat;
+}
+.icon-fire{
+    background-image: url(../img/fire.png);
+    background-size: 70px 70px;
+}
+.icon-help{
+    background-image: url(../img/help.png);
+}
+.icon-mug{
+    background-image: url(../img/mug.png);
+}
+.icon-crash, .icon-car{
+    background-image: url(../img/crash.png);
+    background-position-x: 5px
+}
+.icon-home{
+    background-image: url(../img/home.png);
+    background-size: 70px 70px;
+}
+.icon-factory{
+    background-image: url(../img/factory.png);
+    background-position-x: 0
+}
+.icon-return{
+    background-image: url(../img/return.png);
+    background-size: 64px 64px;
+    background-color: #f5b7b1;
+/*    color: #FFF;
+    border: solid 1px #c0392b;*/
+    height: 80px;
+    line-height: 80px;
+    font-size: 1em;   
+    /*padding-left: 80px;*/
+}
+.icon-oneperson{
+    background-image: url(../img/oneperson.png);   
+    background-size: 80px 80px;
+}
+.icon-twopersons{
+    background-image: url(../img/twopersons.png); 
+    background-size: 80px 80px;
+}
+.icon-threepersons{
+    background-image: url(../img/threepersons.png);   
+}
+.icon-morepersons{
+    background-image: url(../img/morepersons.png);   
+}
+.icon-noidea{
+    background-image: url(../img/noidea.png); 
+    background-size: 65px 65px;
+}
+.icon-mappin{
+    background-image: url(../img/mappin.png);
+    background-size: 60px 60px;
+}
+.icon-gps{
+    background-image: url(../img/gps.png);  
+    background-size: 60px 60px;
+}
+.icon-send{
+    background-image: url(../img/send.png); 
+    background-size: 60px 60px;
+}
+
+.settings{
+    background-image: url(../img/settings.png);
+    background-size: 64px 64px;
+    background-color: #f5b7b1;
+/*    background-color: #c0392b;
+    color: #FFF;
+    border: solid 1px #c0392b;*/
+    line-height: 80px;
+    font-size: 1em;  
+    /*padding-left: 80px;*/
+}
+
+.question{
+    display: none;
+}
+
+#sms{
+    text-align: center;
+    font-size: 0.8em;
+    margin: 30px;
+}
+
+.input-settings{
+    display: block;
+    background: #FFF;
+    border: solid 1px #CCC;
+    width: 95%;
+    margin: 0 auto;
+    font-size: 1em;
+    padding: 10px;
+}
+.button-settings{
+    display: block;
+    cursor: pointer;
+    text-align: center;
+    width: 95%;
+    margin: 0 auto;
+}
+
+#question-address-gps{
+    /*padding-left: 0;*/
+    font-size: 0.5em;
+    line-height: 80px;
+    min-height: 80px;
+}
+#myframe{
+    display: none;
+}

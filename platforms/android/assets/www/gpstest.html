@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+
+    </head>
+    <body>
+        <div id="log">TODO write content</div>
+    </body>
+    
+        <script>
+
+            navigator.geolocation.getCurrentPosition(function(position) {
+                var latitude = position.coords.latitude;
+                var longitude = position.coords.longitude;
+                var accuracy = position.coords.accuracy;
+
+                var geocoder = new google.maps.Geocoder();
+                var lat = parseFloat(latitude);
+                var lng = parseFloat(longitude);
+                var latlng = new google.maps.LatLng(lat, lng);
+                geocoder.geocode({'latLng': latlng}, function(results, status) {
+                    if (status == google.maps.GeocoderStatus.OK) {
+                        if (results[1]) {
+                            console.log(latitude + '|' + longitude + '|' + results[0].formatted_address);
+                            console.log(results);
+                            document.querySelector('#log').innerHTML = latitude + '|' + longitude + '|' + results[0].formatted_address;
+
+                        } else {
+                            console.log('No results found');
+                        }
+                    } else {
+                        console.log('Geocoder failed due to: ' + status);
+                    }
+                });
+
+            }, function(error) {
+                console.log(error);
+            });</script>
+</html>
