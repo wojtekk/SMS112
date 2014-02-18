@@ -8,8 +8,7 @@ Description
 * org.apache.cordova.geolocation
 * org.apache.cordova.network-information
 * org.apache.cordova.splashscreen
-
-* [Sms](http://plugreg.com/plugin/aharris88/phonegap-sms-plugin) ?
+* [org.apache.cordova.plugin.sms](http://plugreg.com/plugin/aharris88/phonegap-sms-plugin) ?
 
 ## Tools for developer
 

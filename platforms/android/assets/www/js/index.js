@@ -121,9 +121,12 @@ var app = {
             parts = [];
             parts[parts.length] = localStorage.getItem('name');
 
-            document.querySelector('#to').value = localStorage.getItem('targetphone');
-            document.querySelector('#messagetosend').value = document.querySelector('#sms').innerHTML;
-            document.querySelector('#myform').submit();
+            var number = localStorage.getItem('targetphone');
+            var message = document.querySelector('#sms').innerHTML;
+            var intent = ''; //leave empty for sending sms using default intent
+            var success = function () { alert('Wiadomość została wysłana'); };
+            var error = function (e) { alert('Podczas wysyłania wiadomości wystąpił błąd:' + e); };
+            sms.send(number, message, intent, success, error);
 
             document.querySelector('#sms').innerHTML = '';
         });

@@ -8,7 +8,6 @@
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
         <link rel="stylesheet" type="text/css" href="css/index.css" />
         <script src="cordova.js"></script>
-        <script src="socialmessage.js"></script>
         <script src="js/index.js"></script>
         <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
     </head>
@@ -79,27 +78,14 @@
             <div id="sms">
 
             </div>
-            <iframe name="myframe" id="myframe" src="about:blank"></iframe>
-            <form method="post" action="https://ssl.smsapi.pl/sms.do" target="myframe" id="myform">
-                <input type="hidden" name="username" value="krk.hack4good@gmail.com">
-                <input type="hidden" name="password" value="25d55ad283aa400af464c76d713c07ad">
-                <input type="hidden" name="encoding" value="utf-8">
-                <input type="hidden" id="to" name="to" value="48500160764">
-                <input type="hidden" id="messagetosend" name="message" value="">
-                <input type="hidden" name="normalize" value="1">
-                <!--<input type="hidden" name="test" value="1">-->
-                <!--<input type="submit" value="wyślij">-->
-            </form>
+
             <div class="link icon icon-send" data-next="start" data-hide="send" id="finish" data-text=" Proszę o pomoc.">Wyślij</div>
         </section>
-
-        <div id="debug"></div>
-
         <script>
             app.initialize();
-           // if (!navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry|IEMobile)/)) {
+            if (!navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry|IEMobile)/)) {
                 app.start(); //this is the browser
-           // }
+            }
         </script>
     </body>
 </html>
